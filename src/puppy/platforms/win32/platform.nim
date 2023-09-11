@@ -9,7 +9,7 @@ proc internalFetch*(req: Request): Response {.raises: [PuppyError].} =
 
     hSession = WinHttpOpen(
       cast[ptr WCHAR](wideUserAgent[0].unsafeAddr),
-      WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY,
+      1,
       nil,
       nil,
       0
